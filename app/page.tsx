@@ -66,11 +66,6 @@ export default function Home() {
               className="object-contain"
               referrerPolicy="no-referrer"
             />
-            
-            {/* Overlay squares on the image as seen in the design */}
-            <div className="absolute top-1/4 left-1/2 w-10 h-10 md:w-16 md:h-16 border border-white/50 bg-white/10 backdrop-blur-sm" />
-            <div className="absolute top-1/2 left-1/2 w-10 h-10 md:w-16 md:h-16 border border-white/50 bg-white/10 backdrop-blur-sm" />
-            <div className="absolute top-1/2 left-[calc(50%+2.5rem)] md:left-[calc(50%+4rem)] w-10 h-10 md:w-16 md:h-16 border border-white/50 bg-white/10 backdrop-blur-sm" />
           </div>
 
           {/* Callout 1: Top Right */}
