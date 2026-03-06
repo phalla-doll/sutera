@@ -3,7 +3,7 @@ import { Globe, X } from 'lucide-react';
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full overflow-hidden bg-white text-black selection:bg-black selection:text-white">
+    <main className="relative min-h-screen w-full overflow-hidden bg-white text-black selection:bg-[#FF4500] selection:text-white">
       {/* Background Grid Lines */}
       <div className="pointer-events-none absolute inset-0 z-0">
         {/* Horizontal Lines */}
@@ -15,10 +15,10 @@ export default function Home() {
         <div className="absolute top-0 left-[75%] w-[1px] h-full bg-black/10" />
         
         {/* Crosshairs */}
-        <div className="absolute top-[35%] left-[25%] -translate-x-1/2 -translate-y-1/2 text-black/20 text-xs font-mono">+</div>
-        <div className="absolute top-[35%] left-[75%] -translate-x-1/2 -translate-y-1/2 text-black/20 text-xs font-mono">+</div>
-        <div className="absolute top-[65%] left-[25%] -translate-x-1/2 -translate-y-1/2 text-black/20 text-xs font-mono">+</div>
-        <div className="absolute top-[65%] left-[75%] -translate-x-1/2 -translate-y-1/2 text-black/20 text-xs font-mono">+</div>
+        <div className="absolute top-[35%] left-[25%] -translate-x-1/2 -translate-y-1/2 text-[#FF4500] text-xs font-mono">+</div>
+        <div className="absolute top-[35%] left-[75%] -translate-x-1/2 -translate-y-1/2 text-[#FF4500] text-xs font-mono">+</div>
+        <div className="absolute top-[65%] left-[25%] -translate-x-1/2 -translate-y-1/2 text-[#FF4500] text-xs font-mono">+</div>
+        <div className="absolute top-[65%] left-[75%] -translate-x-1/2 -translate-y-1/2 text-[#FF4500] text-xs font-mono">+</div>
       </div>
 
       {/* Top Navigation */}
@@ -26,10 +26,10 @@ export default function Home() {
         <div className="font-sans font-medium text-sm tracking-normal">SUTÉRA</div>
         
         <div className="flex flex-col items-center gap-2">
-          <div className="border border-black px-2 py-1 bg-white">
+          <div className="border border-black px-2 py-1 bg-white hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors cursor-pointer">
             CHANGE REALITY
           </div>
-          <Globe className="w-5 h-5 stroke-[1.5]" />
+          <Globe className="w-5 h-5 stroke-[1.5] text-[#FF4500]" />
         </div>
         
         <div className="text-right leading-tight">
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="relative max-w-3xl">
           <h1 className="text-[10vw] leading-[0.85] font-medium tracking-tighter">
             REALITY<span className="relative">,
-              <div className="absolute top-0 left-full ml-2 -mt-4 border border-black px-1.5 py-0.5 text-[10px] font-mono whitespace-nowrap bg-white">
+              <div className="absolute top-0 left-full ml-2 -mt-4 border border-[#FF4500] text-[#FF4500] px-1.5 py-0.5 text-[10px] font-mono whitespace-nowrap bg-white">
                 <span className="absolute -top-2 -left-2 text-[8px]">+</span>
                 LAB REALITY
               </div>
@@ -84,8 +84,8 @@ export default function Home() {
             {/* Line connecting to flower */}
             <svg className="absolute top-full left-0 w-[160px] h-[100px] overflow-visible hidden lg:block" style={{ transform: 'translate(-100%, 0)' }}>
               <path d="M 160 0 L 100 0 L 60 60 L 0 60" fill="none" stroke="black" strokeWidth="1" />
-              <rect x="-4" y="56" width="8" height="8" fill="white" stroke="black" strokeWidth="1" />
-              <rect x="-2" y="58" width="4" height="4" fill="black" />
+              <rect x="-4" y="56" width="8" height="8" fill="white" stroke="#FF4500" strokeWidth="1" />
+              <rect x="-2" y="58" width="4" height="4" fill="#FF4500" />
             </svg>
           </div>
 
@@ -98,8 +98,8 @@ export default function Home() {
             {/* Line connecting to left side */}
             <svg className="absolute top-full right-0 w-[160px] h-[80px] overflow-visible hidden lg:block" style={{ transform: 'translate(100%, 0)' }}>
               <path d="M 0 0 L 60 0 L 100 60 L 160 60" fill="none" stroke="black" strokeWidth="1" />
-              <rect x="156" y="56" width="8" height="8" fill="white" stroke="black" strokeWidth="1" />
-              <rect x="158" y="58" width="4" height="4" fill="black" />
+              <rect x="156" y="56" width="8" height="8" fill="white" stroke="#FF4500" strokeWidth="1" />
+              <rect x="158" y="58" width="4" height="4" fill="#FF4500" />
             </svg>
           </div>
 
@@ -108,8 +108,8 @@ export default function Home() {
             {/* Line connecting to bottom */}
             <svg className="absolute bottom-full left-0 w-[120px] h-[100px] overflow-visible hidden lg:block" style={{ transform: 'translate(-100%, 0)' }}>
               <path d="M 120 100 L 60 100 L 20 20 L 0 20" fill="none" stroke="black" strokeWidth="1" />
-              <rect x="-4" y="16" width="8" height="8" fill="white" stroke="black" strokeWidth="1" />
-              <rect x="-2" y="18" width="4" height="4" fill="black" />
+              <rect x="-4" y="16" width="8" height="8" fill="white" stroke="#FF4500" strokeWidth="1" />
+              <rect x="-2" y="18" width="4" height="4" fill="#FF4500" />
             </svg>
             <div className="text-[8px] md:text-[9px] font-mono uppercase leading-tight mt-2 bg-white/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-1 md:p-0 rounded">
               FOUNDATION<br />
@@ -123,11 +123,11 @@ export default function Home() {
             {/* Line connecting to right side */}
             <svg className="absolute top-1/2 right-full w-[120px] h-[80px] overflow-visible hidden lg:block" style={{ transform: 'translate(0, -50%)' }}>
               <path d="M 120 40 L 80 40 L 40 80 L 0 80" fill="none" stroke="black" strokeWidth="1" />
-              <rect x="-4" y="76" width="8" height="8" fill="white" stroke="black" strokeWidth="1" />
-              <rect x="-2" y="78" width="4" height="4" fill="black" />
+              <rect x="-4" y="76" width="8" height="8" fill="white" stroke="#FF4500" strokeWidth="1" />
+              <rect x="-2" y="78" width="4" height="4" fill="#FF4500" />
             </svg>
-            <div className="border border-black bg-white p-2 md:p-3 font-mono text-[8px] md:text-[10px] uppercase shadow-sm">
-              <div className="flex justify-between items-center border-b border-black pb-1 md:pb-2 mb-1 md:mb-2 bg-black/5 p-1">
+            <div className="border border-[#FF4500] bg-white p-2 md:p-3 font-mono text-[8px] md:text-[10px] uppercase shadow-sm">
+              <div className="flex justify-between items-center border-b border-[#FF4500] pb-1 md:pb-2 mb-1 md:mb-2 bg-[#FF4500]/10 p-1 text-[#FF4500]">
                 <span className="font-bold text-xs md:text-sm">SUTÉRA</span>
                 <span className="text-[6px] md:text-[8px]">/25</span>
               </div>
@@ -159,7 +159,7 @@ export default function Home() {
                 </div>
                 <div className="h-24 grid grid-cols-3 grid-rows-8 gap-[1px] bg-black/10 p-[1px]">
                   {Array.from({length: 24}).map((_, i) => (
-                    <div key={i} className={`bg-white ${[2, 5, 7, 11, 14, 18, 21, 23].includes(i) ? 'bg-black/20' : ''}`} />
+                    <div key={i} className={`bg-white ${[2, 5, 7, 11, 14, 18, 21, 23].includes(i) ? 'bg-[#FF4500]' : ''}`} />
                   ))}
                 </div>
               </div>
@@ -200,7 +200,7 @@ export default function Home() {
           {/* Bottom Right: About Box */}
           <div className="w-full max-w-[320px] md:w-80 flex flex-col gap-2">
             <div className="border border-black bg-white">
-              <div className="bg-black text-white text-[10px] font-mono px-2 py-1 flex justify-between items-center uppercase">
+              <div className="bg-[#FF4500] text-white text-[10px] font-mono px-2 py-1 flex justify-between items-center uppercase">
                 <span>NOT A STUDIO - JUST ME</span>
                 <button className="border border-white/30 bg-white/10 hover:bg-white/20 p-0.5">
                   <X className="w-3 h-3" />
@@ -211,9 +211,9 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-end gap-2 font-mono text-[9px]">
-              <button className="border border-black rounded-full px-3 py-1 hover:bg-black hover:text-white transition-colors">LINKEDIN</button>
-              <button className="border border-black rounded-full px-3 py-1 hover:bg-black hover:text-white transition-colors">MEDIUM</button>
-              <button className="border border-black rounded-full px-3 py-1 hover:bg-black hover:text-white transition-colors">INSTAGRAM</button>
+              <button className="border border-black rounded-full px-3 py-1 hover:bg-[#FF4500] hover:border-[#FF4500] hover:text-white transition-colors">LINKEDIN</button>
+              <button className="border border-black rounded-full px-3 py-1 hover:bg-[#FF4500] hover:border-[#FF4500] hover:text-white transition-colors">MEDIUM</button>
+              <button className="border border-black rounded-full px-3 py-1 hover:bg-[#FF4500] hover:border-[#FF4500] hover:text-white transition-colors">INSTAGRAM</button>
             </div>
           </div>
 
