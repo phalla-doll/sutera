@@ -280,10 +280,17 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
           {/* Project 1 */}
           <div 
-            className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col hover:border-[#FF4500] transition-colors"
+            className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col hover:border-[#FF4500] transition-colors p-6"
             onClick={() => setSelectedProject(projects[0])}
           >
-            <div className="h-64 border-b border-black group-hover:border-[#FF4500] relative overflow-hidden bg-black/5 transition-colors">
+            <div className="flex justify-between items-start mb-6">
+              <h3 className="text-2xl font-bold tracking-tight">PROJECT OMEGA</h3>
+              <div className="border border-black px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white group-hover:border-[#FF4500] transition-colors">
+                STATUS: ACTIVE
+              </div>
+            </div>
+            
+            <div className="flex-1 relative overflow-hidden bg-black/5 transition-colors mb-6 border border-black/10 group-hover:border-[#FF4500]/30 min-h-[200px]">
               <Image 
                 src={projects[0].visual}
                 alt={projects[0].title}
@@ -291,15 +298,10 @@ export default function Home() {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute top-4 right-4 border border-black px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white group-hover:border-[#FF4500] transition-colors z-10">
-                STATUS: ACTIVE
-              </div>
             </div>
-            <div className="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-bold tracking-tight mb-2">PROJECT OMEGA</h3>
-                <p className="font-mono text-xs text-black/60 mb-4">Haptic feedback gloves for VR sculpting.</p>
-              </div>
+
+            <div className="flex flex-col justify-between">
+              <p className="font-mono text-xs text-black/60 mb-4">Haptic feedback gloves for VR sculpting.</p>
               <div className="flex gap-2 font-mono text-[9px]">
                 <span className="border border-black/20 px-2 py-1 rounded-full">HARDWARE</span>
                 <span className="border border-black/20 px-2 py-1 rounded-full">UNITY</span>
@@ -309,10 +311,17 @@ export default function Home() {
 
           {/* Project 2 */}
           <div 
-            className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col hover:border-[#FF4500] transition-colors"
+            className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col hover:border-[#FF4500] transition-colors p-6"
             onClick={() => setSelectedProject(projects[1])}
           >
-            <div className="h-64 border-b border-black group-hover:border-[#FF4500] relative overflow-hidden bg-[#FF4500]/10 transition-colors">
+            <div className="flex justify-between items-start mb-6">
+              <h3 className="text-2xl font-bold tracking-tight">NEURAL LINK UI</h3>
+              <div className="border border-[#FF4500] text-[#FF4500] px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white transition-colors">
+                STATUS: DEPLOYED
+              </div>
+            </div>
+            
+            <div className="flex-1 relative overflow-hidden bg-[#FF4500]/10 transition-colors mb-6 border border-black/10 group-hover:border-[#FF4500]/30 min-h-[200px]">
               <Image 
                 src={projects[1].visual}
                 alt={projects[1].title}
@@ -320,15 +329,10 @@ export default function Home() {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute top-4 right-4 border border-[#FF4500] text-[#FF4500] px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white transition-colors z-10">
-                STATUS: DEPLOYED
-              </div>
             </div>
-            <div className="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-bold tracking-tight mb-2">NEURAL LINK UI</h3>
-                <p className="font-mono text-xs text-black/60 mb-4">Brain-computer interface dashboard for real-time monitoring.</p>
-              </div>
+
+            <div className="flex flex-col justify-between">
+              <p className="font-mono text-xs text-black/60 mb-4">Brain-computer interface dashboard for real-time monitoring.</p>
               <div className="flex gap-2 font-mono text-[9px]">
                 <span className="border border-black/20 px-2 py-1 rounded-full">WEBGL</span>
                 <span className="border border-black/20 px-2 py-1 rounded-full">REACT</span>
