@@ -274,68 +274,122 @@ export default function Home() {
       </section>
 
       {/* Section 3: Lab Experiments */}
-      <section className="relative z-10 w-full min-h-screen p-6 flex flex-col border-t border-black/10 bg-white/80 backdrop-blur-sm">
-        <div className="font-mono text-xs text-[#FF4500] mb-12">[ 02. LAB EXPERIMENTS ]</div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
-          {/* Project 1 */}
-          <div 
-            className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col hover:border-[#FF4500] transition-colors p-6"
-            onClick={() => setSelectedProject(projects[0])}
-          >
-            <div className="flex justify-between items-start mb-6">
-              <h3 className="text-2xl font-bold tracking-tight">PROJECT OMEGA</h3>
-              <div className="border border-black px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white group-hover:border-[#FF4500] transition-colors">
-                STATUS: ACTIVE
+      <section className="relative z-10 w-full py-24 p-6 flex flex-col border-t border-black/10 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="font-mono text-xs text-[#FF4500] mb-12">[ 02. LAB EXPERIMENTS ]</div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Project 1 */}
+            <div 
+              className="group relative border border-black bg-white cursor-pointer hover:border-[#FF4500] transition-colors duration-300 flex flex-col"
+              onClick={() => setSelectedProject(projects[0])}
+            >
+              {/* Decorative corner accents */}
+              <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#FF4500] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 -translate-y-1" />
+              <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#FF4500] opacity-0 group-hover:opacity-100 transition-opacity translate-x-1 -translate-y-1" />
+              <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#FF4500] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 translate-y-1" />
+              <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#FF4500] opacity-0 group-hover:opacity-100 transition-opacity translate-x-1 translate-y-1 z-10" />
+
+              {/* Top bar */}
+              <div className="flex justify-between items-center p-4 border-b border-black group-hover:border-[#FF4500] transition-colors bg-black/5">
+                <div className="font-mono text-[10px] tracking-widest text-black/50">ID: {projects[0].id.toUpperCase()}</div>
+                <div className="border border-black px-2 py-1 text-[9px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white group-hover:border-[#FF4500] transition-colors">
+                  STATUS: {projects[0].status}
+                </div>
+              </div>
+
+              {/* Image Area */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/5 border-b border-black group-hover:border-[#FF4500] transition-colors">
+                <Image 
+                  src={projects[0].visual}
+                  alt={projects[0].title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+
+              {/* Content Area */}
+              <div className="p-6 bg-white flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-3xl font-bold tracking-tighter mb-3 group-hover:text-[#FF4500] transition-colors">
+                    {projects[0].title}
+                  </h3>
+                  <p className="font-mono text-xs text-black/60 mb-6 line-clamp-2">
+                    {projects[0].shortDesc}
+                  </p>
+                </div>
+                
+                <div className="flex justify-between items-end">
+                  <div className="flex gap-2 font-mono text-[9px]">
+                    {projects[0].tags.map(tag => (
+                      <span key={tag} className="border border-black/20 px-2 py-1 rounded-full bg-black/5 group-hover:border-[#FF4500]/30 transition-colors">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center group-hover:bg-[#FF4500] group-hover:text-white group-hover:border-[#FF4500] transition-all duration-300 -rotate-45 group-hover:rotate-0">
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
               </div>
             </div>
-            
-            <div className="flex-1 relative overflow-hidden bg-black/5 transition-colors mb-6 border border-black/10 group-hover:border-[#FF4500]/30 min-h-[200px]">
-              <Image 
-                src={projects[0].visual}
-                alt={projects[0].title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                referrerPolicy="no-referrer"
-              />
-            </div>
 
-            <div className="flex flex-col justify-between">
-              <p className="font-mono text-xs text-black/60 mb-4">Haptic feedback gloves for VR sculpting.</p>
-              <div className="flex gap-2 font-mono text-[9px]">
-                <span className="border border-black/20 px-2 py-1 rounded-full">HARDWARE</span>
-                <span className="border border-black/20 px-2 py-1 rounded-full">UNITY</span>
+            {/* Project 2 */}
+            <div 
+              className="group relative border border-black bg-white cursor-pointer hover:border-[#FF4500] transition-colors duration-300 flex flex-col"
+              onClick={() => setSelectedProject(projects[1])}
+            >
+              {/* Decorative corner accents */}
+              <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#FF4500] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 -translate-y-1" />
+              <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#FF4500] opacity-0 group-hover:opacity-100 transition-opacity translate-x-1 -translate-y-1" />
+              <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#FF4500] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 translate-y-1" />
+              <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#FF4500] opacity-0 group-hover:opacity-100 transition-opacity translate-x-1 translate-y-1 z-10" />
+
+              {/* Top bar */}
+              <div className="flex justify-between items-center p-4 border-b border-black group-hover:border-[#FF4500] transition-colors bg-[#FF4500]/5">
+                <div className="font-mono text-[10px] tracking-widest text-black/50">ID: {projects[1].id.toUpperCase()}</div>
+                <div className="border border-[#FF4500] text-[#FF4500] px-2 py-1 text-[9px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white transition-colors">
+                  STATUS: {projects[1].status}
+                </div>
               </div>
-            </div>
-          </div>
 
-          {/* Project 2 */}
-          <div 
-            className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col hover:border-[#FF4500] transition-colors p-6"
-            onClick={() => setSelectedProject(projects[1])}
-          >
-            <div className="flex justify-between items-start mb-6">
-              <h3 className="text-2xl font-bold tracking-tight">NEURAL LINK UI</h3>
-              <div className="border border-[#FF4500] text-[#FF4500] px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white transition-colors">
-                STATUS: DEPLOYED
+              {/* Image Area */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#FF4500]/10 border-b border-black group-hover:border-[#FF4500] transition-colors">
+                <Image 
+                  src={projects[1].visual}
+                  alt={projects[1].title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-            </div>
-            
-            <div className="flex-1 relative overflow-hidden bg-[#FF4500]/10 transition-colors mb-6 border border-black/10 group-hover:border-[#FF4500]/30 min-h-[200px]">
-              <Image 
-                src={projects[1].visual}
-                alt={projects[1].title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                referrerPolicy="no-referrer"
-              />
-            </div>
 
-            <div className="flex flex-col justify-between">
-              <p className="font-mono text-xs text-black/60 mb-4">Brain-computer interface dashboard for real-time monitoring.</p>
-              <div className="flex gap-2 font-mono text-[9px]">
-                <span className="border border-black/20 px-2 py-1 rounded-full">WEBGL</span>
-                <span className="border border-black/20 px-2 py-1 rounded-full">REACT</span>
+              {/* Content Area */}
+              <div className="p-6 bg-white flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-3xl font-bold tracking-tighter mb-3 group-hover:text-[#FF4500] transition-colors">
+                    {projects[1].title}
+                  </h3>
+                  <p className="font-mono text-xs text-black/60 mb-6 line-clamp-2">
+                    {projects[1].shortDesc}
+                  </p>
+                </div>
+                
+                <div className="flex justify-between items-end">
+                  <div className="flex gap-2 font-mono text-[9px]">
+                    {projects[1].tags.map(tag => (
+                      <span key={tag} className="border border-black/20 px-2 py-1 rounded-full bg-black/5 group-hover:border-[#FF4500]/30 transition-colors">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center group-hover:bg-[#FF4500] group-hover:text-white group-hover:border-[#FF4500] transition-all duration-300 -rotate-45 group-hover:rotate-0">
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
