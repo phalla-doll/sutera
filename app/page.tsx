@@ -248,10 +248,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="font-mono text-xs text-[#FF4500] mb-12">[ 01. PHILOSOPHY ]</div>
           <h2 className="text-6xl md:text-8xl leading-[0.85] font-medium tracking-tighter uppercase">
-            <div className="block">We build interfaces</div>
-            <div className="block">that</div>
-            <div className="block"><span className="text-black/30 hover:text-black transition-colors">feel human</span>, systems</div>
-            <div className="block">that</div>
+            <div className="block">We build interfaces that</div>
+            <div className="block"><span className="text-black/30 hover:text-black transition-colors">feel human</span>,</div>
+            <div className="block">systems that</div>
             <div className="block"><span className="text-[#FF4500]">augment reality</span>, and</div>
             <div className="block">tools that <span className="italic font-serif">empower.</span></div>
           </h2>
