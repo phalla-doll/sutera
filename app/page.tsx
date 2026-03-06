@@ -244,30 +244,32 @@ export default function Home() {
       </div>
 
       {/* Section 2: Philosophy */}
-      <section className="relative z-10 w-full min-h-screen p-6 flex flex-col justify-center border-t border-black/10 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-5xl mx-auto w-full">
-          <div className="font-mono text-xs text-[#FF4500] mb-8">[ 01. PHILOSOPHY ]</div>
-          <h2 className="text-[6vw] leading-[0.9] font-medium tracking-tighter uppercase">
-            We build interfaces that <br/>
-            <span className="text-black/30 hover:text-black transition-colors">feel human</span>, systems that <br/>
-            <span className="text-[#FF4500]">augment reality</span>, and <br/>
-            tools that <span className="italic font-serif">empower</span>.
+      <section className="relative z-10 w-full min-h-screen p-6 py-24 flex flex-col justify-center border-t border-black/10 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="font-mono text-xs text-[#FF4500] mb-12">[ 01. PHILOSOPHY ]</div>
+          <h2 className="text-[11vw] md:text-[7.5vw] leading-[0.85] font-medium tracking-tighter uppercase">
+            <div className="block">We build interfaces</div>
+            <div className="block">that</div>
+            <div className="block"><span className="text-black/30 hover:text-black transition-colors">feel human</span>, systems</div>
+            <div className="block">that</div>
+            <div className="block"><span className="text-[#FF4500]">augment reality</span>, and</div>
+            <div className="block">tools that <span className="italic font-serif">empower.</span></div>
           </h2>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
-            <div className="border border-black p-4 bg-white/50 backdrop-blur-sm hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors group">
-              <div className="text-lg mb-4">01</div>
-              <div className="font-bold mb-2">SPATIAL COMPUTING</div>
-              <div className="opacity-70 group-hover:opacity-100">Moving beyond flat screens into environments that understand context and depth.</div>
+          <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+            <div className="border border-black p-6 bg-white hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors group flex flex-col">
+              <div className="text-lg mb-12">01</div>
+              <div className="font-bold mb-4 uppercase">Spatial Computing</div>
+              <div className="opacity-70 group-hover:opacity-100 leading-relaxed">Moving beyond flat screens into environments that understand context and depth.</div>
             </div>
-            <div className="border border-black p-4 bg-white/50 backdrop-blur-sm hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors group">
-              <div className="text-lg mb-4">02</div>
-              <div className="font-bold mb-2">NEURAL INTERFACES</div>
-              <div className="opacity-70 group-hover:opacity-100">Direct pathways between human intent and machine execution.</div>
+            <div className="border border-black p-6 bg-white hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors group flex flex-col">
+              <div className="text-lg mb-12">02</div>
+              <div className="font-bold mb-4 uppercase">Neural Interfaces</div>
+              <div className="opacity-70 group-hover:opacity-100 leading-relaxed">Direct pathways between human intent and machine execution.</div>
             </div>
-            <div className="border border-black p-4 bg-white/50 backdrop-blur-sm hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors group">
-              <div className="text-lg mb-4">03</div>
-              <div className="font-bold mb-2">GENERATIVE SYSTEMS</div>
-              <div className="opacity-70 group-hover:opacity-100">Tools that co-create, adapting to the user&apos;s workflow in real-time.</div>
+            <div className="border border-black p-6 bg-white hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors group flex flex-col">
+              <div className="text-lg mb-12">03</div>
+              <div className="font-bold mb-4 uppercase">Generative Systems</div>
+              <div className="opacity-70 group-hover:opacity-100 leading-relaxed">Tools that co-create, adapting to the user&apos;s workflow in real-time.</div>
             </div>
           </div>
         </div>
