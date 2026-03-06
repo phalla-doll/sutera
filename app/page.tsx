@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-white text-black selection:bg-[#FF4500] selection:text-white">
       {/* Background Grid Lines */}
-      <div className="pointer-events-none absolute inset-0 z-0">
+      <div className="pointer-events-none fixed inset-0 z-0">
         {/* Horizontal Lines */}
         <div className="absolute top-[35%] left-0 w-full h-[1px] bg-black/10" />
         <div className="absolute top-[65%] left-0 w-full h-[1px] bg-black/10" />
@@ -38,8 +38,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <div className="relative z-10 w-full h-screen flex flex-col justify-between p-6 pt-24 pb-12">
+      {/* Main Content (Hero) */}
+      <div className="relative z-10 w-full min-h-screen flex flex-col justify-between p-6 pt-24 pb-12">
         
         {/* Top Left: Huge Heading */}
         <div className="relative max-w-3xl">
@@ -214,6 +214,126 @@ export default function Home() {
 
         </div>
       </div>
+
+      {/* Section 2: Philosophy */}
+      <section className="relative z-10 w-full min-h-screen p-6 flex flex-col justify-center border-t border-black/10 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-5xl mx-auto w-full">
+          <div className="font-mono text-xs text-[#FF4500] mb-8">[ 01. PHILOSOPHY ]</div>
+          <h2 className="text-[6vw] leading-[0.9] font-medium tracking-tighter uppercase">
+            We build interfaces that <br/>
+            <span className="text-black/30 hover:text-black transition-colors">feel human</span>, systems that <br/>
+            <span className="text-[#FF4500]">augment reality</span>, and <br/>
+            tools that <span className="italic font-serif">empower</span>.
+          </h2>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+            <div className="border border-black p-4 bg-white/50 backdrop-blur-sm hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors group">
+              <div className="text-lg mb-4">01</div>
+              <div className="font-bold mb-2">SPATIAL COMPUTING</div>
+              <div className="opacity-70 group-hover:opacity-100">Moving beyond flat screens into environments that understand context and depth.</div>
+            </div>
+            <div className="border border-black p-4 bg-white/50 backdrop-blur-sm hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors group">
+              <div className="text-lg mb-4">02</div>
+              <div className="font-bold mb-2">NEURAL INTERFACES</div>
+              <div className="opacity-70 group-hover:opacity-100">Direct pathways between human intent and machine execution.</div>
+            </div>
+            <div className="border border-black p-4 bg-white/50 backdrop-blur-sm hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors group">
+              <div className="text-lg mb-4">03</div>
+              <div className="font-bold mb-2">GENERATIVE SYSTEMS</div>
+              <div className="opacity-70 group-hover:opacity-100">Tools that co-create, adapting to the user&apos;s workflow in real-time.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Lab Experiments */}
+      <section className="relative z-10 w-full min-h-screen p-6 flex flex-col border-t border-black/10 bg-white/80 backdrop-blur-sm">
+        <div className="font-mono text-xs text-[#FF4500] mb-12">[ 02. LAB EXPERIMENTS ]</div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
+          {/* Project 1 */}
+          <div className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col">
+            <div className="h-64 border-b border-black relative overflow-hidden bg-black/5">
+              <div className="absolute inset-0 flex items-center justify-center font-mono text-black/20 group-hover:scale-110 transition-transform duration-500">
+                [ VISUAL DATA MISSING ]
+              </div>
+              <div className="absolute top-4 right-4 border border-black px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white group-hover:border-[#FF4500] transition-colors">
+                STATUS: ACTIVE
+              </div>
+            </div>
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-bold tracking-tight mb-2">PROJECT OMEGA</h3>
+                <p className="font-mono text-xs text-black/60 mb-4">Haptic feedback gloves for VR sculpting.</p>
+              </div>
+              <div className="flex gap-2 font-mono text-[9px]">
+                <span className="border border-black/20 px-2 py-1 rounded-full">HARDWARE</span>
+                <span className="border border-black/20 px-2 py-1 rounded-full">UNITY</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 2 */}
+          <div className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col">
+            <div className="h-64 border-b border-black relative overflow-hidden bg-[#FF4500]/10">
+              <div className="absolute inset-0 flex items-center justify-center font-mono text-[#FF4500]/40 group-hover:scale-110 transition-transform duration-500">
+                <svg className="w-24 h-24" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
+                  <circle cx="50" cy="50" r="40" />
+                  <circle cx="50" cy="50" r="20" />
+                  <line x1="10" y1="50" x2="90" y2="50" />
+                  <line x1="50" y1="10" x2="50" y2="90" />
+                </svg>
+              </div>
+              <div className="absolute top-4 right-4 border border-[#FF4500] text-[#FF4500] px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white transition-colors">
+                STATUS: DEPLOYED
+              </div>
+            </div>
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-bold tracking-tight mb-2">NEURAL LINK UI</h3>
+                <p className="font-mono text-xs text-black/60 mb-4">Brain-computer interface dashboard for real-time monitoring.</p>
+              </div>
+              <div className="flex gap-2 font-mono text-[9px]">
+                <span className="border border-black/20 px-2 py-1 rounded-full">WEBGL</span>
+                <span className="border border-black/20 px-2 py-1 rounded-full">REACT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <section className="relative z-10 w-full border-t border-black/10 bg-[#FF4500] text-white overflow-hidden">
+        <div className="flex whitespace-nowrap py-4 border-b border-white/20">
+          <div className="animate-marquee font-mono text-xs tracking-widest uppercase flex items-center gap-4">
+            <span>AVAILABLE FOR FREELANCE</span>
+            <span>+++</span>
+            <span>BASED IN ZURICH</span>
+            <span>+++</span>
+            <span>AVAILABLE FOR FREELANCE</span>
+            <span>+++</span>
+            <span>BASED IN ZURICH</span>
+            <span>+++</span>
+            <span>AVAILABLE FOR FREELANCE</span>
+            <span>+++</span>
+            <span>BASED IN ZURICH</span>
+            <span>+++</span>
+            <span>AVAILABLE FOR FREELANCE</span>
+            <span>+++</span>
+            <span>BASED IN ZURICH</span>
+            <span>+++</span>
+          </div>
+        </div>
+        <div className="p-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-12 md:gap-0">
+          <div>
+            <h2 className="text-6xl md:text-8xl font-medium tracking-tighter mb-4">LET&apos;S TALK.</h2>
+            <a href="mailto:hello@example.com" className="font-mono text-sm border-b border-white pb-1 hover:text-black hover:border-black transition-colors">HELLO@SUTERA.LAB</a>
+          </div>
+          <div className="font-mono text-[10px] text-right">
+            <div>© 2026 SUTÉRA LAB</div>
+            <div className="text-white/60 mt-1">ALL RIGHTS RESERVED</div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
