@@ -66,9 +66,6 @@ export default function Home() {
               className="object-contain"
               referrerPolicy="no-referrer"
             />
-            {/* Fake red flower */}
-            <div className="absolute top-[-30px] md:top-[-40px] left-1/2 -translate-x-1/2 w-8 h-8 md:w-12 md:h-12 bg-red-500 rounded-full blur-md opacity-80" />
-            <div className="absolute top-[-20px] md:top-[-30px] left-1/2 -translate-x-1/2 w-6 h-6 md:w-8 md:h-8 bg-red-600 rounded-full" />
             
             {/* Overlay squares on the image as seen in the design */}
             <div className="absolute top-1/4 left-1/2 w-10 h-10 md:w-16 md:h-16 border border-white/50 bg-white/10 backdrop-blur-sm" />
