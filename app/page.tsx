@@ -1,7 +1,35 @@
+'use client';
+
 import Image from 'next/image';
-import { Globe, X } from 'lucide-react';
+import { Globe, X, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+
+const projects = [
+  {
+    id: 'omega',
+    title: 'PROJECT OMEGA',
+    status: 'ACTIVE',
+    shortDesc: 'Haptic feedback gloves for VR sculpting.',
+    longDesc: 'Project Omega explores the boundaries of tactile feedback in virtual environments. By utilizing micro-pneumatic actuators, these gloves simulate the resistance and texture of digital clay, allowing artists to sculpt with unprecedented precision and physical intuition. The system integrates with Unity and Unreal Engine via custom plugins, providing sub-millimeter tracking and instantaneous haptic response.',
+    tags: ['HARDWARE', 'UNITY'],
+    visual: 'missing',
+    links: [{ label: 'VIEW REPOSITORY', url: '#' }, { label: 'READ WHITEPAPER', url: '#' }]
+  },
+  {
+    id: 'neural',
+    title: 'NEURAL LINK UI',
+    status: 'DEPLOYED',
+    shortDesc: 'Brain-computer interface dashboard for real-time monitoring.',
+    longDesc: 'A high-performance WebGL dashboard designed to visualize real-time neural activity. It processes thousands of data points per second, translating complex brainwave patterns into readable, actionable metrics for researchers and clinicians. The interface is built with React and Three.js, ensuring 60fps rendering even under heavy data loads.',
+    tags: ['WEBGL', 'REACT'],
+    visual: 'svg',
+    links: [{ label: 'LIVE DEMO', url: '#' }, { label: 'DOCUMENTATION', url: '#' }]
+  }
+];
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-white text-black selection:bg-[#FF4500] selection:text-white">
       {/* Background Grid Lines */}
@@ -251,8 +279,11 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
           {/* Project 1 */}
-          <div className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col">
-            <div className="h-64 border-b border-black relative overflow-hidden bg-black/5">
+          <div 
+            className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col hover:border-[#FF4500] transition-colors"
+            onClick={() => setSelectedProject(projects[0])}
+          >
+            <div className="h-64 border-b border-black group-hover:border-[#FF4500] relative overflow-hidden bg-black/5 transition-colors">
               <div className="absolute inset-0 flex items-center justify-center font-mono text-black/20 group-hover:scale-110 transition-transform duration-500">
                 [ VISUAL DATA MISSING ]
               </div>
@@ -273,8 +304,11 @@ export default function Home() {
           </div>
 
           {/* Project 2 */}
-          <div className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col">
-            <div className="h-64 border-b border-black relative overflow-hidden bg-[#FF4500]/10">
+          <div 
+            className="border border-black group cursor-pointer bg-white/50 backdrop-blur-sm flex flex-col hover:border-[#FF4500] transition-colors"
+            onClick={() => setSelectedProject(projects[1])}
+          >
+            <div className="h-64 border-b border-black group-hover:border-[#FF4500] relative overflow-hidden bg-[#FF4500]/10 transition-colors">
               <div className="absolute inset-0 flex items-center justify-center font-mono text-[#FF4500]/40 group-hover:scale-110 transition-transform duration-500">
                 <svg className="w-24 h-24" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
                   <circle cx="50" cy="50" r="40" />
@@ -334,6 +368,84 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Project Modal */}
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-white/80 backdrop-blur-md">
+          <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-black bg-white shadow-2xl flex flex-col">
+            {/* Modal Header */}
+            <div className="sticky top-0 z-10 flex justify-between items-center border-b border-black bg-white p-4">
+              <div className="font-mono text-xs text-[#FF4500] uppercase">
+                [ PROJECT DETAILS: {selectedProject.id} ]
+              </div>
+              <button 
+                onClick={() => setSelectedProject(null)}
+                className="border border-black hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] p-1 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            
+            {/* Modal Content */}
+            <div className="flex flex-col md:flex-row">
+              {/* Visual Area */}
+              <div className="w-full md:w-1/2 border-b md:border-b-0 md:border-r border-black bg-black/5 min-h-[300px] flex items-center justify-center relative p-8">
+                {selectedProject.visual === 'missing' ? (
+                  <div className="font-mono text-black/20 text-center">
+                    [ VISUAL DATA MISSING ]<br/>
+                    <span className="text-xs mt-2 block">AWAITING UPLOAD</span>
+                  </div>
+                ) : (
+                  <div className="text-[#FF4500]/40 w-full h-full flex items-center justify-center">
+                    <svg className="w-full max-w-[200px] h-auto" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
+                      <circle cx="50" cy="50" r="40" />
+                      <circle cx="50" cy="50" r="20" />
+                      <line x1="10" y1="50" x2="90" y2="50" />
+                      <line x1="50" y1="10" x2="50" y2="90" />
+                    </svg>
+                  </div>
+                )}
+                <div className="absolute top-4 right-4 border border-[#FF4500] text-[#FF4500] px-2 py-1 text-[10px] font-mono bg-white">
+                  STATUS: {selectedProject.status}
+                </div>
+              </div>
+              
+              {/* Text Area */}
+              <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4 uppercase">
+                  {selectedProject.title}
+                </h2>
+                
+                <div className="flex flex-wrap gap-2 font-mono text-[10px] mb-8">
+                  {selectedProject.tags.map(tag => (
+                    <span key={tag} className="border border-black/20 px-2 py-1 rounded-full bg-black/5">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                <div className="font-mono text-sm leading-relaxed mb-8 flex-1">
+                  <p className="font-bold mb-4">{selectedProject.shortDesc}</p>
+                  <p className="text-black/70">{selectedProject.longDesc}</p>
+                </div>
+                
+                <div className="flex flex-col gap-3 mt-auto border-t border-black/10 pt-6">
+                  {selectedProject.links.map((link, i) => (
+                    <a 
+                      key={i}
+                      href={link.url}
+                      className="flex items-center justify-between border border-black p-3 font-mono text-xs hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500] transition-colors group"
+                    >
+                      <span>{link.label}</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
