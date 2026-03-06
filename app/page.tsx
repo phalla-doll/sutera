@@ -12,7 +12,7 @@ const projects = [
     shortDesc: 'Haptic feedback gloves for VR sculpting.',
     longDesc: 'Project Omega explores the boundaries of tactile feedback in virtual environments. By utilizing micro-pneumatic actuators, these gloves simulate the resistance and texture of digital clay, allowing artists to sculpt with unprecedented precision and physical intuition. The system integrates with Unity and Unreal Engine via custom plugins, providing sub-millimeter tracking and instantaneous haptic response.',
     tags: ['HARDWARE', 'UNITY'],
-    visual: 'missing',
+    visual: 'https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-evtjXo6aKDxlNGX9HsdCWMTSFhZCnW.png&w=1000&q=75',
     links: [{ label: 'VIEW REPOSITORY', url: '#' }, { label: 'READ WHITEPAPER', url: '#' }]
   },
   {
@@ -22,7 +22,7 @@ const projects = [
     shortDesc: 'Brain-computer interface dashboard for real-time monitoring.',
     longDesc: 'A high-performance WebGL dashboard designed to visualize real-time neural activity. It processes thousands of data points per second, translating complex brainwave patterns into readable, actionable metrics for researchers and clinicians. The interface is built with React and Three.js, ensuring 60fps rendering even under heavy data loads.',
     tags: ['WEBGL', 'REACT'],
-    visual: 'svg',
+    visual: 'https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-opbOAvh8t0ruHQOw2uhzIMtpPAbrNP.png&w=1000&q=75',
     links: [{ label: 'LIVE DEMO', url: '#' }, { label: 'DOCUMENTATION', url: '#' }]
   }
 ];
@@ -284,10 +284,14 @@ export default function Home() {
             onClick={() => setSelectedProject(projects[0])}
           >
             <div className="h-64 border-b border-black group-hover:border-[#FF4500] relative overflow-hidden bg-black/5 transition-colors">
-              <div className="absolute inset-0 flex items-center justify-center font-mono text-black/20 group-hover:scale-110 transition-transform duration-500">
-                [ VISUAL DATA MISSING ]
-              </div>
-              <div className="absolute top-4 right-4 border border-black px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white group-hover:border-[#FF4500] transition-colors">
+              <Image 
+                src={projects[0].visual}
+                alt={projects[0].title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute top-4 right-4 border border-black px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white group-hover:border-[#FF4500] transition-colors z-10">
                 STATUS: ACTIVE
               </div>
             </div>
@@ -309,15 +313,14 @@ export default function Home() {
             onClick={() => setSelectedProject(projects[1])}
           >
             <div className="h-64 border-b border-black group-hover:border-[#FF4500] relative overflow-hidden bg-[#FF4500]/10 transition-colors">
-              <div className="absolute inset-0 flex items-center justify-center font-mono text-[#FF4500]/40 group-hover:scale-110 transition-transform duration-500">
-                <svg className="w-24 h-24" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
-                  <circle cx="50" cy="50" r="40" />
-                  <circle cx="50" cy="50" r="20" />
-                  <line x1="10" y1="50" x2="90" y2="50" />
-                  <line x1="50" y1="10" x2="50" y2="90" />
-                </svg>
-              </div>
-              <div className="absolute top-4 right-4 border border-[#FF4500] text-[#FF4500] px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white transition-colors">
+              <Image 
+                src={projects[1].visual}
+                alt={projects[1].title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute top-4 right-4 border border-[#FF4500] text-[#FF4500] px-2 py-1 text-[10px] font-mono bg-white group-hover:bg-[#FF4500] group-hover:text-white transition-colors z-10">
                 STATUS: DEPLOYED
               </div>
             </div>
@@ -390,22 +393,14 @@ export default function Home() {
             <div className="flex flex-col md:flex-row">
               {/* Visual Area */}
               <div className="w-full md:w-1/2 border-b md:border-b-0 md:border-r border-black bg-black/5 min-h-[300px] flex items-center justify-center relative p-8">
-                {selectedProject.visual === 'missing' ? (
-                  <div className="font-mono text-black/20 text-center">
-                    [ VISUAL DATA MISSING ]<br/>
-                    <span className="text-xs mt-2 block">AWAITING UPLOAD</span>
-                  </div>
-                ) : (
-                  <div className="text-[#FF4500]/40 w-full h-full flex items-center justify-center">
-                    <svg className="w-full max-w-[200px] h-auto" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
-                      <circle cx="50" cy="50" r="40" />
-                      <circle cx="50" cy="50" r="20" />
-                      <line x1="10" y1="50" x2="90" y2="50" />
-                      <line x1="50" y1="10" x2="50" y2="90" />
-                    </svg>
-                  </div>
-                )}
-                <div className="absolute top-4 right-4 border border-[#FF4500] text-[#FF4500] px-2 py-1 text-[10px] font-mono bg-white">
+                <Image 
+                  src={selectedProject.visual}
+                  alt={selectedProject.title}
+                  fill
+                  className="object-contain p-8"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute top-4 right-4 border border-[#FF4500] text-[#FF4500] px-2 py-1 text-[10px] font-mono bg-white z-10">
                   STATUS: {selectedProject.status}
                 </div>
               </div>
