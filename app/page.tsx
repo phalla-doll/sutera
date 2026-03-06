@@ -247,7 +247,7 @@ export default function Home() {
       <section className="relative z-10 w-full min-h-screen p-6 py-24 flex flex-col justify-center border-t border-black/10 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto w-full">
           <div className="font-mono text-xs text-[#FF4500] mb-12">[ 01. PHILOSOPHY ]</div>
-          <h2 className="text-[11vw] md:text-[7.5vw] leading-[0.85] font-medium tracking-tighter uppercase">
+          <h2 className="text-6xl md:text-8xl leading-[0.85] font-medium tracking-tighter uppercase">
             <div className="block">We build interfaces</div>
             <div className="block">that</div>
             <div className="block"><span className="text-black/30 hover:text-black transition-colors">feel human</span>, systems</div>
