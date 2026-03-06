@@ -60,10 +60,10 @@ export default function Home() {
           {/* The Island Image */}
           <div className="relative w-[280px] h-[210px] md:w-[400px] md:h-[300px] z-20 shrink-0">
             <Image 
-              src="https://picsum.photos/seed/floatingisland/800/600" 
-              alt="Floating Island" 
+              src="https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-zJFuTatkOlIXBxVbP58TAzlCr5PTv7.png&w=1000&q=75" 
+              alt="3D Floating Island" 
               fill 
-              className="object-cover rounded-[100px] opacity-90 mix-blend-multiply"
+              className="object-contain"
               referrerPolicy="no-referrer"
             />
             {/* Fake red flower */}
